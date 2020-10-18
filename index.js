@@ -1,6 +1,12 @@
-const SinglyLinkedList = require('./src/SinglyLinkedList/index')
+const SinglyLinkedList = require('./src/SinglyLinkedList/index');
+const DoublyLinkedList = require('./src/DoublyLinkedList/index');
+const Queue            = require('./src/Queue/index');
+const Stack            = require('./src/Stack/index');
 
 
 module.exports = {
-     SinglyLinkedList 
+     SinglyLinkedList,
+     DoublyLinkedList,
+     Queue,
+     Stack,
     }   

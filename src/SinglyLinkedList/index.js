@@ -56,8 +56,8 @@ SinglyLinkedList.prototype.insert = withTry(function ( data, pos){
 });
 
 /**
- * push_start
- * @param data The data inserted into a new node
+ *   push_start
+ *   @param data The data inserted into a new node
  * * Insert A node at the start
  */
 SinglyLinkedList.prototype.pushStart = withTry(function(data){
@@ -65,8 +65,8 @@ SinglyLinkedList.prototype.pushStart = withTry(function(data){
 });
 
 /**
- * push
- * @param data The data inserted into a new node
+ *   push
+ *   @param data The data inserted into a new node
  * * Insert A node at the end
  */
 SinglyLinkedList.prototype.push = withTry(function(data){
@@ -74,8 +74,8 @@ SinglyLinkedList.prototype.push = withTry(function(data){
 });
 
 /**
- * delete
- * @param pos
+ *   delete
+ *   @param pos
  * * deletes a node at position
  */
 SinglyLinkedList.prototype.delete = withTry(function(pos){
@@ -108,23 +108,23 @@ SinglyLinkedList.prototype.delete = withTry(function(pos){
 });
 
 /**
- * pop
- * *Remove last element of list
+ *   pop
+ * * Remove last element of list
  */
 SinglyLinkedList.prototype.pop = withTry(function(){
     return this.delete(this.size - 1);
 });
 
 /**
- * popStart
- * *Remove first element of list
+ *   popStart
+ * * Remove first element of list
  */
 SinglyLinkedList.prototype.popStart = withTry(function(){
     return this.delete(0);
 });
 
 /**
- * getHead
+ *   getHead
  * * Return a copy of the list head
  */
 SinglyLinkedList.prototype.getHead = withTry(function () {
@@ -132,7 +132,7 @@ SinglyLinkedList.prototype.getHead = withTry(function () {
 });
 
 /**
- * getTail
+ *   getTail
  * * Return a copy of the list tail
  */
 SinglyLinkedList.prototype.getTail = withTry(function () {
@@ -140,7 +140,7 @@ SinglyLinkedList.prototype.getTail = withTry(function () {
 });
 
 /**
- * size
+ *   size
  * * returns the number of elements in the SinglyLinkedList
  */
 SinglyLinkedList.prototype.getSize = withTry(function () {
@@ -165,6 +165,21 @@ SinglyLinkedList.prototype.view = withTry(function () {
     console.log(log);
     return this;
 });
+
+/**
+ *   toArray
+ * * Converts the linked list to array
+ */
+SinglyLinkedList.prototype.toArray = withTry(function () {
+    let pntr = this.head;
+    let array = [];
+    while(pntr){
+        array.push(pntr.data);
+        pntr = pntr.next
+    }
+
+    return array;
+})
 
 
 module.exports = SinglyLinkedList;

@@ -10,6 +10,7 @@ let obj = new LinkedList([1, 2, 3]);
 
 obj = new LinkedList([1, 2, 3]);
 obj.pop().popStart().push(1).push(2).push(3).push(4).view();
-console.log(obj.getSize());
-obj.delete(5);
+let a = obj.toArray();
+
+console.log(Array.isArray(a))
 

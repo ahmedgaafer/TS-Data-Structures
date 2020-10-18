@@ -20,7 +20,6 @@ function DoublyLinkedList(data = []){
 
 }
 
-
 /**
 *   insert
 *   @param data The data inserted into a new node
@@ -65,8 +64,8 @@ DoublyLinkedList.prototype.insert = withTry(function ( data, pos){
     return this;
 });
 /**
- * push_start
- * @param data The data inserted into a new node
+ *   push_start
+ *   @param data The data inserted into a new node
  * * Insert A node at the start
  */
 DoublyLinkedList.prototype.pushStart = withTry(function(data){
@@ -74,8 +73,8 @@ DoublyLinkedList.prototype.pushStart = withTry(function(data){
 });
 
 /**
- * push
- * @param data The data inserted into a new node
+ *   push
+ *   @param data The data inserted into a new node
  * * Insert A node at the end
  */
 DoublyLinkedList.prototype.push = withTry(function(data){
@@ -83,8 +82,8 @@ DoublyLinkedList.prototype.push = withTry(function(data){
 });
 
 /**
- * delete
- * @param pos
+ *   delete
+ *   @param pos
  * * deletes a node at position
  */
 DoublyLinkedList.prototype.delete = withTry(function(pos){
@@ -116,23 +115,23 @@ DoublyLinkedList.prototype.delete = withTry(function(pos){
 });
 
 /**
- * pop
- * *Remove last element of list
+ *   pop
+ * * Remove last element of list
  */
 DoublyLinkedList.prototype.pop = withTry(function(){
     return this.delete(this.size - 1);
 });
 
 /**
- * popStart
- * *Remove first element of list
+ *   popStart
+ * * Remove first element of list
  */
 DoublyLinkedList.prototype.popStart = withTry(function(){
     return this.delete(0);
 });
 
 /**
- * getHead
+ *   getHead
  * * Return a copy of the list head
  */
 DoublyLinkedList.prototype.getHead = withTry(function () {
@@ -140,7 +139,7 @@ DoublyLinkedList.prototype.getHead = withTry(function () {
 });
 
 /**
- * getTail
+ *   getTail
  * * Return a copy of the list tail
  */
 DoublyLinkedList.prototype.getTail = withTry(function () {
@@ -148,7 +147,7 @@ DoublyLinkedList.prototype.getTail = withTry(function () {
 });
 
 /**
- * size
+ *   size
  * * returns the number of elements in the DoublyLinkedList
  */
 DoublyLinkedList.prototype.getSize = withTry(function () {
@@ -174,5 +173,19 @@ DoublyLinkedList.prototype.view = withTry(function () {
     return this;
 });
 
+/**
+ *   toArray
+ * * Converts the linked list to array
+ */
+DoublyLinkedList.prototype.toArray = withTry(function () {
+    let pntr = this.head;
+    let array = [];
+    while(pntr){
+        array.push(pntr.data);
+        pntr = pntr.next
+    }
+
+    return array;
+})
 
 module.exports = DoublyLinkedList;
