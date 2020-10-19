@@ -32,7 +32,35 @@ $ npm install @ahmeds.gaafer/js-data-structures --save
 ### Singly Linked List:
 
 ```JS
+const { SinglyLinkedList } = require('@ahmeds.gaafer/js-data-structures');
+
+// The constructor can accept an array as an input and it will transform the array to the linked list
+const arr = [1, 2, 3];
+const list = new SinglyLinkedList(arr);
+
+list.push(1); 
+
+list.view();
+
+// You can chain methods that does not return a value
+
+list.popStart().pop().view(); // vaild
+
+list.getHead().view(); // invalid
+
 ```
+functions:
+- ***.insert(data, pos)*** => Insert data to certian position.
+- ***.pushStart(data)*** => Insert data at the head position.
+- ***.push(data)*** => Insert data at tail position.
+- ***.delete(pos)*** => Delete element at a certian position.
+- ***.pop()*** => Delete element from the end of the tail.
+- ***.popStart()*** => Delte element from the head.
+- ***.getHead()*** => Returns a copy of the head node.
+- ***.getTail()*** => Returns a copy of the tail node.
+- ***.view()*** => Prints a visual dispaly of the linked list.
+- ***.toArray()*** => Returns the linked list as an array
+
 
 ### Doubly Linked List:
 
