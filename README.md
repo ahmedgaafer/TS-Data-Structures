@@ -1,10 +1,10 @@
 # JavaScript Data Structures
 <p align="">
-  <img src="https://img.shields.io/npm/l/@ahmeds.gaafer/js-data-structures">
-  <img src="https://img.shields.io/bundlephobia/min/@ahmeds.gaafer/js-data-structures" >
+  <a href="https://www.npmjs.com/package/@ahmeds.gaafer/js-data-structures" target="_blank"><img src="https://img.shields.io/npm/l/@ahmeds.gaafer/js-data-structures"></a>
+  <a href="https://www.npmjs.com/package/@ahmeds.gaafer/js-data-structures" target="_blank"><img src="https://img.shields.io/bundlephobia/min/@ahmeds.gaafer/js-data-structures" ></a>
 </p>  
 <p align="">
-  <img src="https://img.shields.io/discord/712223278844084275?label=Discord&style=for-the-badge">
+  <a href="https://discord.gg/TgVpvUN" target="_blank"><img src="https://img.shields.io/discord/712223278844084275?label=Discord&style=for-the-badge"></a>
 </p>
 
 
