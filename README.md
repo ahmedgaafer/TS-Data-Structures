@@ -1,6 +1,6 @@
 # JavaScript Data Structures
 
-<img href="https://img.shields.io/npm/l/@ahmeds.gaafer/js-data-structures">
+<img src="https://img.shields.io/npm/l/@ahmeds.gaafer/js-data-structures">
 
 Data Structures made by Vanilla JS.
 
