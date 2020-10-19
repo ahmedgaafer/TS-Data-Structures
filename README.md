@@ -3,6 +3,9 @@
   <img src="https://img.shields.io/npm/l/@ahmeds.gaafer/js-data-structures">
   <img src="https://img.shields.io/bundlephobia/min/@ahmeds.gaafer/js-data-structures" >
 </p>  
+<p align="">
+  <img src="https://img.shields.io/discord/712223278844084275?label=Discord&style=for-the-badge">
+</p>
 
 
 Data Structures made by Vanilla JS.
