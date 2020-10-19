@@ -2,12 +2,44 @@
 
 Data Structures made by Vanilla JS.
 
-### Data Structure list:
+## Install
+
+```bash
+$ npm install @ahmeds.gaafer/js-data-structures --save
+```
+
+## Data Structure list:
 
 - [x] Singly Linked List
 - [x] Doubly Linked List
-- [x] queue
-- [x] stack
-- [x] heap
+- [x] Queue
+- [x] Stack
+- [x] Heap
 - [ ] Graph
 
+## Usage
+
+### Singly Linked List:
+
+```JS
+```
+
+### Doubly Linked List:
+
+```JS
+```
+
+### Queue:
+
+```JS
+```
+
+### Stack:
+
+```JS
+```
+
+### Heap:
+
+```JS
+```

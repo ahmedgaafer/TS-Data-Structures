@@ -1,10 +1,8 @@
 {
-  "name": "js-data-structures",
+  "name": "@ahmeds.gaafer/js-data-structures",
   "version": "1.0.0",
   "description": "a light weight libirary for JS Data structures",
   "main": "index.js",
-  "dependencies": {},
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
