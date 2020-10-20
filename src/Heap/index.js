@@ -58,7 +58,7 @@ Heap.prototype.pop = withTry(function(){
     this.data[0] = this.data[this.size - 1]; 
     this.size -= 1;
     this.heapifyDown();
-    return item;
+    return this;
 
 });
 Heap.prototype.push = withTry(function(data){
@@ -97,6 +97,7 @@ Heap.prototype.heapifyDown = withTry(function(){
 Heap.prototype.getSize = withTry(function(){return this.size});
 Heap.prototype.view = withTry(function(){
     console.log(this.data.filter((elem, idx) => idx < this.size));
+    return this;
 });
 
 module.exports = Heap;

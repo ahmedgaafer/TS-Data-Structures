@@ -20,7 +20,8 @@ Queue.prototype.enqueue = withTry(function(data){
  */
 Queue.prototype.dequeue = withTry(function(){
     if(this.data.length == 0)throw "Can not remove from an empty queue."
-    return this.data.shift();
+    this.data.shift();
+    return this; 
 });
 
 /**

@@ -20,7 +20,8 @@ Stack.prototype.push = withTry(function(data){
  */
 Stack.prototype.pop = withTry(function(){
     if(this.data.length == 0)throw "Can not remove from an empty queue."
-    return this.data.pop();
+    this.data.pop();
+    return this; 
 
 });
 
