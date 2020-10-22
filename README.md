@@ -26,7 +26,7 @@ $ npm install @ahmeds.gaafer/js-data-structures --save
 - [x] Queue
 - [x] Stack
 - [x] Heap
-- [ ] Graph
+- [x] Graph
 
 ## Usage
 
@@ -187,3 +187,59 @@ functions:
 - ***.getSize()*** => Returns the size of the heap;
 - ***.view()*** => Prints the array of the heap;
 
+### Graph:
+
+```JS
+const { Graph } = require('@ahmeds.gaafer/js-data-structures');
+
+//The graph can has 2 arguments that are set to false by default.
+//The first argument is "isUniDirectional" if you set it to true the graph will be a directed graph.
+//The second argument is "isWeighted" if you set it to true the graph will be weighted.
+
+const g = new Graph();// un-directed un-weighted graph
+//or
+const g = new Graph(true, false); // directed un-weighted graph.
+//or
+const g = new Graph(false, true); // un-directed  weighted graph.
+//or
+const g = new Graph(true, true); // directed weighted graph
+
+g.addVertex(1);
+g.addVertex(2);
+
+
+// You can chain methods that does not return a value
+
+g.addVertex(1).addVertex(2); // valid
+
+g.getNeighbours(1).addVertex(3); // invalid
+
+
+// if you write a code that can brake the logic of the graph it will log an error message but will nor stop the whole execution of the program.
+
+//Ex
+
+g.addVertex(1);
+g.addVertex(1); // add same vertex twice
+
+g.removeVertex(5)// remove a non-existant vertex
+
+// etc...
+
+```
+
+functions:
+
+- ***.addVertex(v)*** => Adds vertex to the graph.
+- ***.addEdge(u, v, w: conditional)*** => Add edge between vertex "u" and vertex "v" . weight of the edge "w" is valid if only the graph is set to be weighted.
+- ***.removeVertex(v)*** => Removes the vertex from the graph and removes all of the linked edges to it.
+- ***.removeEdge(u, v)*** => Removes edge between vertex "u" and "v".
+- ***.getVerticesNumbers()*** => Returns the number of vertcies in the Graph.
+- ***.getNeighbours(v)*** => Returns a the list of neighbours of vertex v
+- ***.view()*** => Display a visual display of the graphs adjacency list.
+
+
+
+# Important Note:
+
+> ***Any usage of the functions not mentioned in the functions above might lead to un-expected behaviour.***
