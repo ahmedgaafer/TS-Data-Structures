@@ -54,7 +54,7 @@ Queue.prototype.view = withTry(function(){
  *   getSize
  * * Return the number of elements in queue.
  */
-Queue.prototype.getSize = withTry(function(){});
+Queue.prototype.getSize = withTry(function(){return this.data.length});
 
 module.exports = Queue;
 
