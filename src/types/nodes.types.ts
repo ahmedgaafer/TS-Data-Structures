@@ -1,6 +1,6 @@
-export interface SinglyLinkedListNode<T> {
+export interface ISinglyLinkedListNode<T> {
 	data: T;
-	next: SinglyLinkedListNode<T> | null;
+	next: ISinglyLinkedListNode<T> | null;
 }
 
 export interface DoublyLinkedListNode<T> {
