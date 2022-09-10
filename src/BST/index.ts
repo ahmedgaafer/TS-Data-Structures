@@ -1,4 +1,4 @@
-import { BSTreeNode } from "../types/nodes.types";
+import { BSTreeNode, NodeData } from "../types/nodes.types";
 import { BSTree } from "..//types/datastructures.types";
 
 //#region helpers
@@ -128,7 +128,7 @@ class BSTNode<T> implements BSTreeNode<T> {
 	}
 }
 
-class BST implements BSTree {
+export class BST<T extends NodeData> implements BSTree<T> {
 	root: BSTreeNode<any> | null;
 	size: number;
 
@@ -148,7 +148,7 @@ class BST implements BSTree {
 	 * @param data  data you want to insert into the tree
 	 * @returns a self reference to the BST
 	 */
-	insert(data: any): BST {
+	insert(data: T): BST<T> {
 		const newNode: BSTreeNode<typeof data> = new BSTNode(data);
 		this.root = this.size === 0 ? newNode : _insert(this.root, newNode);
 		this.size += 1;
@@ -172,7 +172,7 @@ class BST implements BSTree {
 	 * @param data data you want to delete from the tree
 	 * @returns a self reference to the BST
 	 */
-	delete(data: any): BST {
+	delete(data: T): BST<T> {
 		if (this.size === 0) throw "Can not delete from an empty tree";
 
 		this.root = _delete(this.root, data);
@@ -184,7 +184,7 @@ class BST implements BSTree {
 	 * Logs the tree to the console
 	 * @returns a self reference to the BST
 	 */
-	view(): BST {
+	view(): BST<T> {
 		if (this.size === 0) throw "Can not display an empty tree";
 		const maxDepth = this.getMaxDepth();
 		console.log(
@@ -205,7 +205,7 @@ class BST implements BSTree {
 	 * Get the node with the maximum value
 	 * @returns  The node with the maximum value in the tree
 	 */
-	getMaxNode(): BSTreeNode<any> | null {
+	getMaxNode(): BSTreeNode<T> | null {
 		if (this.size === 0) throw "Tree is empty";
 
 		return _getMaxNode(this.root);
@@ -215,7 +215,7 @@ class BST implements BSTree {
 	 * Get the node with the minimum value
 	 * @returns  The node with the minimum value in the tree
 	 */
-	getMinNode(): BSTreeNode<any> | null {
+	getMinNode(): BSTreeNode<T> | null {
 		if (this.size === 0) throw "Tree is empty";
 		return _getMinNode(this.root);
 	}
@@ -225,9 +225,7 @@ class BST implements BSTree {
 	 * @param data data you want to search for
 	 * @returns the node with the data or -1 if not found
 	 */
-	search(data: any): BSTreeNode<any> | -1 {
+	search(data: T): BSTreeNode<T> | -1 {
 		return _search(this.root, data);
 	}
 }
-
-module.exports = BST;

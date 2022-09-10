@@ -1,15 +1,15 @@
-import { BSTreeNode, ISinglyLinkedListNode } from "./nodes.types";
+import { BSTreeNode, ISinglyLinkedListNode, NodeData } from "./nodes.types";
 
-export interface BSTree {
-	root: BSTreeNode<any> | null;
+export interface BSTree<T extends NodeData> {
+	root: BSTreeNode<T> | null;
 	size: number;
-	insert(data: any): ThisType<BSTree>;
-	delete(data: any): ThisType<BSTree>;
-	search(data: any): BSTreeNode<any> | number;
+	insert(data: T): ThisType<BSTree<T>>;
+	delete(data: T): ThisType<BSTree<T>>;
+	search(data: T): BSTreeNode<any> | number;
 	getMaxDepth(): number;
-	view(): ThisType<BSTree>;
-	getMaxNode(): BSTreeNode<any> | null;
-	getMinNode(): BSTreeNode<any> | null;
+	view(): ThisType<BSTree<T>>;
+	getMaxNode(): BSTreeNode<T> | null;
+	getMinNode(): BSTreeNode<T> | null;
 }
 
 export interface ISinglyLinkedList {

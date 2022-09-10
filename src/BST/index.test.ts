@@ -1,9 +1,8 @@
-import { BSTree } from "../types/datastructures.types";
-
-const BST = require("./index");
+import { BSTreeNode } from "../types/nodes.types";
+import { BST } from "./index";
 
 describe("Binary Search Tree tests 1", () => {
-	const tree: BSTree = new BST([]);
+	const tree = new BST<number>([]);
 	it("should create a new tree", () => {
 		expect(tree).toBeDefined();
 	});
@@ -40,7 +39,7 @@ describe("Binary Search Tree tests 1", () => {
 });
 
 describe("Binary Search Tree tests 2", () => {
-	const tree: BSTree = new BST([5, 3, 7, 2, 4, 6, 8, 1, 9, 10]);
+	const tree = new BST<number>([5, 3, 7, 2, 4, 6, 8, 1, 9, 10]);
 	it("should create a new tree", () => {
 		expect(tree).toBeDefined();
 	});
@@ -50,8 +49,7 @@ describe("Binary Search Tree tests 2", () => {
 	});
 
 	it("search force branch searches", () => {
-		//@ts-ignore
-		expect(tree.search(1).data).toBe(1);
+		expect((tree.search(1) as BSTreeNode).data).toBe(1);
 		//@ts-ignore
 		expect(tree.search(10).data).toBe(10);
 		//@ts-ignore
@@ -94,7 +92,7 @@ describe("Binary Search Tree tests 2", () => {
 });
 
 describe("Binary Search Tree tests 3", () => {
-	const tree: BSTree = new BST([]);
+	const tree = new BST([]);
 
 	it("delete from empty tree", () => {
 		expect(() => tree.delete(1)).toThrowError(
