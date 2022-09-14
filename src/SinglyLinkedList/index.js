@@ -1,7 +1,7 @@
 import { ISinglyLinkedList } from "../types/datastructures.types";
 import { ISinglyLinkedListNode } from "../types/nodes.types";
 
-class SinglyLinkedList implements ISinglyLinkedList {
+export class SinglyLinkedList<T> implements ISinglyLinkedList<T> {
 	head: null | ISinglyLinkedListNode<any>;
 	tail: null | ISinglyLinkedListNode<any>;
 	size: number;
@@ -12,35 +12,35 @@ class SinglyLinkedList implements ISinglyLinkedList {
 		this.size = 0;
 	}
 
-	insert(data: any, pos: number): SinglyLinkedList {
+	insert(data: any, pos: number): SinglyLinkedList<T> {
 		return this;
 	}
 
-	pushStart(data: any): SinglyLinkedList {
+	pushStart(data: any): SinglyLinkedList<T> {
 		return this;
 	}
 
-	push(data: any): SinglyLinkedList {
+	push(data: any): SinglyLinkedList<T> {
 		return this;
 	}
 
-	delete(data: any): SinglyLinkedList {
+	delete(data: any): SinglyLinkedList<T> {
 		return this;
 	}
 
-	pop(): SinglyLinkedList {
+	pop(): SinglyLinkedList<T> {
 		return this;
 	}
 
-	popStart(): SinglyLinkedList {
+	popStart(): SinglyLinkedList<T> {
 		return this;
 	}
 
-	getHead(): null | ISinglyLinkedListNode<any> {
+	getHead(): null | ISinglyLinkedListNode<T> {
 		return this.head;
 	}
 
-	getTail(): null | ISinglyLinkedListNode<any> {
+	getTail(): null | ISinglyLinkedListNode<T> {
 		return this.tail;
 	}
 
@@ -48,11 +48,11 @@ class SinglyLinkedList implements ISinglyLinkedList {
 		return this.size;
 	}
 
-	view(): SinglyLinkedList {
+	view(): SinglyLinkedList<T> {
 		return this;
 	}
 
-	toArray(): Array<any> {
+	toArray(): Array<T> {
 		return [];
 	}
 }
@@ -67,7 +67,7 @@ class SinglyLinkedListNode implements ISinglyLinkedListNode<any> {
 }
 
 // TODO: refactor JS code to TS
-function SinglyLinkedList2(data = []) {
+function SinglyLinkedList2(data: T[]) {
 	this.head = null;
 	this.tail = null;
 	this.size = 0;
@@ -236,5 +236,3 @@ SinglyLinkedList.prototype.toArray = withTry(function () {
 
 	return array;
 });
-
-module.exports = SinglyLinkedList;

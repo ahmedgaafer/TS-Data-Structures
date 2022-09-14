@@ -24,5 +24,9 @@
 
 		"useUnknownInCatchVariables": true /* Type catch clause variables as 'unknown' instead of 'any'. */,
 		"alwaysStrict": true /* Ensure 'use strict' is always emitted. */
+	},
+	"typedocOptions": {
+		"entryPoints": ["./index.ts"],
+		"out": "./"
 	}
 }

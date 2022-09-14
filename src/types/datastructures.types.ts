@@ -12,19 +12,19 @@ export interface BSTree<T extends NodeData> {
 	getMinNode(): BSTreeNode<T> | null;
 }
 
-export interface ISinglyLinkedList {
-	head: ISinglyLinkedListNode<any> | null;
-	tail: ISinglyLinkedListNode<any> | null;
+export interface ISinglyLinkedList<T> {
+	head: ISinglyLinkedListNode<T> | null;
+	tail: ISinglyLinkedListNode<T> | null;
 	size: number;
-	insert(data: any, pos: number): ThisType<ISinglyLinkedList>;
-	pushStart(data: any): ThisType<ISinglyLinkedList>;
-	push(data: any): ThisType<ISinglyLinkedList>;
-	delete(data: any): ThisType<ISinglyLinkedList>;
-	pop(): ThisType<ISinglyLinkedList>;
-	popStart(): ThisType<ISinglyLinkedList>;
-	getHead(): ISinglyLinkedListNode<any> | null;
-	getTail(): ISinglyLinkedListNode<any> | null;
+	insert(data: T, pos: number): ThisType<ISinglyLinkedList<T>>;
+	pushStart(data: T): ThisType<ISinglyLinkedList<T>>;
+	push(data: T): ThisType<ISinglyLinkedList<T>>;
+	delete(data: T): ThisType<ISinglyLinkedList<T>>;
+	pop(): ThisType<ISinglyLinkedList<T>>;
+	popStart(): ThisType<ISinglyLinkedList<T>>;
+	getHead(): ISinglyLinkedListNode<T> | null;
+	getTail(): ISinglyLinkedListNode<T> | null;
 	getSize(): number;
-	view(): ThisType<ISinglyLinkedList>;
-	toArray(): Array<any>;
+	view(): ThisType<ISinglyLinkedList<T>>;
+	toArray(): Array<T>;
 }
