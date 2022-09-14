@@ -8,10 +8,7 @@ import { BSTree } from "..//types/datastructures.types";
  * @param root root of the tree
  * @param data data you want to search for in the tree
  */
-function _search(
-	root: BSTNode<typeof data> | null,
-	data: any,
-): BSTNode<typeof data> | -1 {
+function _search<T>(root: BSTreeNode<T> | null, data: any): BSTreeNode<T> | -1 {
 	if (!root) return -1;
 	return data > root.data
 		? _search(root.right, data)
@@ -23,7 +20,10 @@ function _search(
 /**
  * Recursive insert help
  */
-function _insert(root: BSTNode<any> | null, node: BSTNode<any>) {
+function _insert<T>(
+	root: BSTreeNode<T> | null,
+	node: BSTreeNode<T>,
+): BSTreeNode<T> {
 	if (!root) return node;
 	if (root.data > node.data) root.left = _insert(root.left, node);
 	else if (root.data < node.data) root.right = _insert(root.right, node);
@@ -36,34 +36,30 @@ function _insert(root: BSTNode<any> | null, node: BSTNode<any>) {
  *   @param data data you want to delete
  * * delete a node from the tree by its value.
  */
-function _delete(
-	root: BSTNode<typeof data> | null,
-	data: any,
-): BSTNode<typeof data> | null {
-	if (!root) return root;
+function _delete<T>(root: BSTreeNode<T>, data: T): BSTreeNode<T> | null {
 	if (root.data > data) {
-		root.left = _delete(root.left, data);
+		root.left = _delete(root.left as BSTreeNode<T>, data);
 		return root;
 	} else if (root.data < data) {
-		root.right = _delete(root.right, data);
+		root.right = _delete(root.right as BSTreeNode<T>, data);
 		return root;
 	} else {
 		let newNode;
 		if (!root.left) {
 			newNode = root.right;
-			root = null;
+			//root = null;
 			return newNode;
 		}
 
 		if (!root.right) {
 			newNode = root.left;
-			root = null;
+			//root = null;
 			return newNode;
 		}
 
-		newNode = _getMinNode(root.right);
-		root.data = newNode?.data;
-		root.right = _delete(root.right, newNode?.data);
+		newNode = _getMinNode(root.right) as BSTreeNode<T>;
+		root.data = newNode.data;
+		root.right = _delete(root.right, newNode.data);
 
 		return root;
 	}
@@ -74,11 +70,11 @@ function _delete(
  *   @param root root of the tree
  * * Recursive view helper to get all data from the tree
  */
-function _view(root: BSTNode<any> | null | undefined): any[] {
+function _view<T>(root: BSTreeNode<T> | null): [T, T[], T[]] | T[] {
 	if (!root) return [];
 	let v = root.data;
-	let r: any[] = _view(root.right);
-	let l: any[] = _view(root.left);
+	let r = _view(root.right) as T[];
+	let l = _view(root.left) as T[];
 	return [v, r, l];
 }
 
@@ -87,11 +83,11 @@ function _view(root: BSTNode<any> | null | undefined): any[] {
  *   @param root root of the tree
  * * get the max depth of the tree
  */
-function _getMaxDepth(root: BSTNode<any> | null): number {
+function _getMaxDepth<T>(root: BSTreeNode<T> | null): number {
 	if (!root) return 0;
 
-	const left: number = _getMaxDepth(root.left);
-	const right: number = _getMaxDepth(root.right);
+	const left = _getMaxDepth(root.left);
+	const right = _getMaxDepth(root.right);
 
 	return Math.max(left, right) + 1;
 }
@@ -101,8 +97,8 @@ function _getMaxDepth(root: BSTNode<any> | null): number {
  *   @param root root of the tree
  * * get the max node from a tree root
  */
-function _getMaxNode(root: BSTNode<any> | null): BSTNode<any> | null {
-	return root?.right ? _getMaxNode(root.right) : root;
+function _getMaxNode<T>(root: BSTreeNode<T>): BSTreeNode<T> | null {
+	return root.right ? _getMaxNode(root.right) : root;
 }
 
 /**
@@ -110,8 +106,8 @@ function _getMaxNode(root: BSTNode<any> | null): BSTNode<any> | null {
  *   @param root root of the tree
  * * get the min node from a tree root
  */
-function _getMinNode(root: BSTNode<any> | null): BSTNode<any> | null {
-	return root?.left ? _getMinNode(root.left) : root;
+function _getMinNode<T>(root: BSTreeNode<T>): BSTreeNode<T> | null {
+	return root.left ? _getMinNode(root.left) : root;
 }
 
 //#endregion
@@ -121,7 +117,7 @@ class BSTNode<T> implements BSTreeNode<T> {
 	left: BSTNode<T> | null;
 	right: BSTNode<T> | null;
 
-	constructor(data: any) {
+	constructor(data: T) {
 		this.data = data;
 		this.left = null;
 		this.right = null;
@@ -129,10 +125,11 @@ class BSTNode<T> implements BSTreeNode<T> {
 }
 
 export class BST<T extends NodeData> implements BSTree<T> {
-	root: BSTreeNode<any> | null;
+	root: BSTreeNode<T> | null;
 	size: number;
 
-	constructor(data: any[]) {
+	static type = "BST<T>";
+	constructor(data: T[]) {
 		this.root = null;
 		this.size = 0;
 
@@ -145,11 +142,12 @@ export class BST<T extends NodeData> implements BSTree<T> {
 
 	/**
 	 * insert a node into the tree
-	 * @param data  data you want to insert into the tree
+	 * @param data   data you want to insert into the tree
 	 * @returns a self reference to the BST
 	 */
+
 	insert(data: T): BST<T> {
-		const newNode: BSTreeNode<typeof data> = new BSTNode(data);
+		const newNode: BSTreeNode<T> = new BSTNode(data);
 		this.root = this.size === 0 ? newNode : _insert(this.root, newNode);
 		this.size += 1;
 
@@ -174,8 +172,7 @@ export class BST<T extends NodeData> implements BSTree<T> {
 	 */
 	delete(data: T): BST<T> {
 		if (this.size === 0) throw "Can not delete from an empty tree";
-
-		this.root = _delete(this.root, data);
+		this.root = _delete(this.root as BSTreeNode<T>, data);
 		this.size -= 1;
 		return this;
 	}
@@ -185,14 +182,15 @@ export class BST<T extends NodeData> implements BSTree<T> {
 	 * @returns a self reference to the BST
 	 */
 	view(): BST<T> {
-		if (this.size === 0) throw "Can not display an empty tree";
+		if (this.size === 0 || this.root === null)
+			throw "Can not display an empty tree";
 		const maxDepth = this.getMaxDepth();
 		console.log(
 			`Tree max depth : ${maxDepth}\nTree Items: ${this.size}\nTree:\n`,
 		);
-		const root: any = this.root?.data;
-		const left = `${_view(this.root?.left)}`;
-		const right = `${_view(this.root?.right)}`;
+		const root: T = this.root.data;
+		const left = `${_view(this.root.left)}`;
+		const right = `${_view(this.root.right)}`;
 		const leftPush = (len: number) => " ".repeat(left.length + len);
 		let log = ` ${leftPush(3)} ${root}\n ${leftPush(3)}/ \\\n${leftPush(
 			3,
@@ -206,7 +204,7 @@ export class BST<T extends NodeData> implements BSTree<T> {
 	 * @returns  The node with the maximum value in the tree
 	 */
 	getMaxNode(): BSTreeNode<T> | null {
-		if (this.size === 0) throw "Tree is empty";
+		if (this.size === 0 || this.root === null) throw "Tree is empty";
 
 		return _getMaxNode(this.root);
 	}
@@ -216,7 +214,7 @@ export class BST<T extends NodeData> implements BSTree<T> {
 	 * @returns  The node with the minimum value in the tree
 	 */
 	getMinNode(): BSTreeNode<T> | null {
-		if (this.size === 0) throw "Tree is empty";
+		if (this.size === 0 || this.root === null) throw "Tree is empty";
 		return _getMinNode(this.root);
 	}
 
@@ -226,6 +224,6 @@ export class BST<T extends NodeData> implements BSTree<T> {
 	 * @returns the node with the data or -1 if not found
 	 */
 	search(data: T): BSTreeNode<T> | -1 {
-		return _search(this.root, data);
+		return _search<T>(this.root, data);
 	}
 }

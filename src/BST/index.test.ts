@@ -2,9 +2,16 @@ import { BSTreeNode } from "../types/nodes.types";
 import { BST } from "./index";
 
 describe("Binary Search Tree tests 1", () => {
-	const tree = new BST<number>([]);
+	let tree: BST<number>;
+	beforeEach(() => {
+		tree = new BST<number>([]);
+	});
+
 	it("should create a new tree", () => {
+		tree.insert(1);
 		expect(tree).toBeDefined();
+		expect(tree).toBeInstanceOf(BST);
+		expect(typeof tree.root?.data).toBe("number");
 	});
 
 	it("should insert a new node", () => {
@@ -14,6 +21,7 @@ describe("Binary Search Tree tests 1", () => {
 	});
 
 	it("should delete a node", () => {
+		tree.insert(1);
 		tree.delete(1);
 		expect(tree.size).toBe(0);
 	});
@@ -24,13 +32,24 @@ describe("Binary Search Tree tests 1", () => {
 		tree.insert(3);
 		expect(tree.getMinNode()?.data).toBe(1);
 	});
-	it("should get the max node", () => {
-		expect(tree.getMaxNode()?.data).toBe(3);
+	it("should throw an error", () => {
+		expect(() => tree.getMaxNode()).toThrowError("Tree is empty");
+	});
+
+	it("should return maxNode", () => {
+		tree.insert(1);
+		tree.insert(2);
+		tree.insert(3);
+
+		expect((tree.getMaxNode() as BSTreeNode<number>).data).toBe(3);
 	});
 
 	it("should search for a node", () => {
-		//@ts-ignore
-		expect(tree.search(2).data).toBe(2);
+		tree.insert(1);
+		tree.insert(2);
+		tree.insert(3);
+
+		expect((tree.search(2) as BSTreeNode<number>).data).toBe(2);
 	});
 
 	it("should search for a node", () => {
@@ -39,7 +58,10 @@ describe("Binary Search Tree tests 1", () => {
 });
 
 describe("Binary Search Tree tests 2", () => {
-	const tree = new BST<number>([5, 3, 7, 2, 4, 6, 8, 1, 9, 10]);
+	let tree: BST<number>;
+	beforeEach(() => {
+		tree = new BST<number>([5, 3, 7, 2, 4, 6, 8, 1, 9, 10]);
+	});
 	it("should create a new tree", () => {
 		expect(tree).toBeDefined();
 	});
@@ -50,10 +72,10 @@ describe("Binary Search Tree tests 2", () => {
 
 	it("search force branch searches", () => {
 		expect((tree.search(1) as BSTreeNode).data).toBe(1);
-		//@ts-ignore
-		expect(tree.search(10).data).toBe(10);
-		//@ts-ignore
-		expect(tree.search(5).data).toBe(5);
+
+		expect((tree.search(10) as BSTreeNode<number>).data).toBe(10);
+
+		expect((tree.search(5) as BSTreeNode<number>).data).toBe(5);
 	});
 
 	it("delete force branches 1", () => {
@@ -80,19 +102,26 @@ describe("Binary Search Tree tests 2", () => {
 	});
 
 	it("Flush the tree", () => {
+		tree.delete(1);
 		tree.delete(2);
 		tree.delete(3);
 		tree.delete(4);
+		tree.delete(5);
 		tree.delete(6);
 		tree.delete(7);
 		tree.delete(8);
 		tree.delete(9);
+		tree.delete(10);
 		expect(tree.size).toBe(0);
 	});
 });
 
 describe("Binary Search Tree tests 3", () => {
-	const tree = new BST([]);
+	let tree: BST<number>;
+
+	beforeAll(() => {
+		tree = new BST<number>([]);
+	});
 
 	it("delete from empty tree", () => {
 		expect(() => tree.delete(1)).toThrowError(
