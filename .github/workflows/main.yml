@@ -3,7 +3,7 @@ name: ON-TS-CONVERSION-PUSH
 on:
   push:
     branches:
-      - ts-conversion
+      - 'ts-coversion'
 
 jobs:
   build:
