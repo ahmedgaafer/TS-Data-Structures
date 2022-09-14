@@ -27,6 +27,6 @@
 	},
 	"typedocOptions": {
 		"entryPoints": ["./index.ts"],
-		"out": "./"
+		"out": "docs"
 	}
 }
