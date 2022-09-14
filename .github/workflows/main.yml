@@ -1,4 +1,4 @@
-name: CI With env variables
+name: ON-TS-CONVERSION-PUSH
 
 on:
   push:
