@@ -1,4 +1,4 @@
-# JavaScript Data Structures
+# JavaScript Data Structures [UPDATING TO V2 A TYPESCRIPT CONVERSION WITH FULL TESTS AND ONILNE DOC]
 <p align="">
   <a href="https://www.npmjs.com/package/@ahmeds.gaafer/js-data-structures" target="_blank"><img src="https://img.shields.io/npm/l/@ahmeds.gaafer/js-data-structures"></a>
   <a href="https://www.npmjs.com/package/@ahmeds.gaafer/js-data-structures" target="_blank"><img src="https://img.shields.io/bundlephobia/min/@ahmeds.gaafer/js-data-structures" ></a>
