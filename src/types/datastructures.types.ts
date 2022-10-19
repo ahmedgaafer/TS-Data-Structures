@@ -19,7 +19,7 @@ export interface ISinglyLinkedList<T> {
 	insert(data: T, pos: number): ThisType<ISinglyLinkedList<T>>;
 	pushStart(data: T): ThisType<ISinglyLinkedList<T>>;
 	push(data: T): ThisType<ISinglyLinkedList<T>>;
-	delete(data: T): ThisType<ISinglyLinkedList<T>>;
+	delete(pos: number): ThisType<ISinglyLinkedList<T>>;
 	pop(): ThisType<ISinglyLinkedList<T>>;
 	popStart(): ThisType<ISinglyLinkedList<T>>;
 	getHead(): ISinglyLinkedListNode<T> | null;

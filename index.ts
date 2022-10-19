@@ -1,3 +1,3 @@
-import { BST } from "./src/BST";
+import { BST as BinarySearchTree } from "./src/BST";
 
-export { BST };
+export { BinarySearchTree };

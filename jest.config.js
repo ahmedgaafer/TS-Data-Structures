@@ -2,16 +2,21 @@
 module.exports = {
 	preset: "ts-jest",
 	testEnvironment: "node",
-	globals: {
-		"ts-jest": {
-			tsconfig: "tsconfig.json",
-			collectCoverage: true,
-			collectCoverageFrom: ["./src/**"],
-			coverageThreshold: {
-				global: {
-					lines: 95,
-				},
-			},
+	collectCoverage: true,
+	verbose: true,
+	collectCoverageFrom: ["./src/**"],
+	coverageThreshold: {
+		global: {
+			lines: 95,
 		},
+	},
+
+	transform: {
+		"^.+\\.tsx?$": [
+			"ts-jest",
+			{
+				tsconfig: "./tsconfig.json",
+			},
+		],
 	},
 };
