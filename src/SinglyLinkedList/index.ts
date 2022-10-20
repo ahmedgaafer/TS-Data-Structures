@@ -19,7 +19,7 @@ export class SinglyLinkedList<T extends NodeData>
 	tail: null | ISinglyLinkedListNode<T>;
 	size: number;
 
-	constructor(data: T[]) {
+	constructor(data: T[] = []) {
 		this.head = null;
 		this.tail = null;
 		this.size = 0;
@@ -44,10 +44,10 @@ export class SinglyLinkedList<T extends NodeData>
 		if (this.size === 0) this.head = newNode;
 		if (this.size === 0) this.tail = newNode;
 
-		if (pos + 1 === 0) {
+		if (pos === 0) {
 			newNode.next = this.head;
 			this.head = newNode;
-		} else if (pos === this.size - 1) {
+		} else if (pos === this.size) {
 			this.tail!.next = newNode;
 			this.tail = newNode;
 		} else {
@@ -70,7 +70,7 @@ export class SinglyLinkedList<T extends NodeData>
 	 * 	@returns {ThisType} self reference to the SinglyLinkedList
 	 */
 	pushStart(data: T): SinglyLinkedList<T> {
-		return this.insert(data, -1);
+		return this.insert(data, 0);
 	}
 
 	/**
@@ -79,7 +79,7 @@ export class SinglyLinkedList<T extends NodeData>
 	 * 	@returns {ThisType} self reference to the SinglyLinkedList
 	 */
 	push(data: T): SinglyLinkedList<T> {
-		return this.insert(data, this.size - 1);
+		return this.insert(data, this.size);
 	}
 
 	/**
@@ -90,10 +90,11 @@ export class SinglyLinkedList<T extends NodeData>
 
 	delete(pos: number): SinglyLinkedList<T> {
 		if (this.size === 0) throw "Can not delete from an empty list";
-		if (this.size < pos) throw "Index out of bounds.";
+		if (this.size - 1 < pos) throw "Index out of bounds.";
 		if (this.size === 1) {
 			this.head = null;
 			this.tail = null;
+			this.size = 0;
 			return this;
 		}
 
@@ -161,7 +162,7 @@ export class SinglyLinkedList<T extends NodeData>
 	 * Log the content of the SinglyLinkedList.
 	 */
 	view(): SinglyLinkedList<T> {
-		if (this.size === 0) throw "Can not view list of size 0.";
+		if (this.size === 0) throw "Can not view an empty list.";
 		let pntr = this.head;
 		let log = "";
 		while (pntr) {

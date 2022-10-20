@@ -1,3 +1,3 @@
 import { BST as BinarySearchTree } from "./src/BST";
-
-export { BinarySearchTree };
+import { SinglyLinkedList } from "./src/SinglyLinkedList";
+export { BinarySearchTree, SinglyLinkedList };
