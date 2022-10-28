@@ -1,9 +1,15 @@
+/**
+ *
+ */
 export type NodeData = unknown;
 
 export type Node<T = NodeData> = {
 	data: T;
 };
 
+/**
+ * SinglyLinkedList Node type
+ */
 export interface ISinglyLinkedListNode<T = NodeData> extends Node<T> {
 	next: ISinglyLinkedListNode<T> | null;
 }

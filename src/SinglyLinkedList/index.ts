@@ -78,10 +78,12 @@ export class SinglyLinkedList<T extends NodeData>
 	 *  @param data The data inserted into a new node
 	 * 	@returns {ThisType} self reference to the SinglyLinkedList
 	 * 	@example
-	 * 	```ts
-	 *  const list = new SinglyLinkedList<number>();
-	 *	list.push(1).push(2).push(3);
-	 * 	```
+	 * Pushing items to the LinkedList
+	 *
+```ts
+			const list = new SinglyLinkedList<number>();
+			list.push(1).push(2).push(3);
+```
 	 */
 	push(data: T): SinglyLinkedList<T> {
 		return this.insert(data, this.size);

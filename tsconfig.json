@@ -26,7 +26,16 @@
 		"alwaysStrict": true /* Ensure 'use strict' is always emitted. */
 	},
 	"typedocOptions": {
-		"entryPoints": ["./index.ts"],
-		"out": "docs"
+		"entryPoints": [
+			"./index.ts",
+			"./src/types/datastructures.types.ts",
+			"./src/types/nodes.types.ts"
+		],
+		"out": "docs",
+		"name": "TS Data Structures",
+		"includeVersion": true,
+		"htmlLang": "en",
+		"githubPages": true,
+		"titleLink": "https://ahmedgaafer.github.io/TS-Data-Structures/"
 	}
 }
