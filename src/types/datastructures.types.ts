@@ -12,7 +12,7 @@ export interface BSTree<T extends NodeData> {
 	getMinNode(): BSTreeNode<T> | null;
 }
 
-export interface ISinglyLinkedList<T> {
+export interface ISinglyLinkedList<T extends NodeData> {
 	head: ISinglyLinkedListNode<T> | null;
 	tail: ISinglyLinkedListNode<T> | null;
 	size: number;
@@ -27,4 +27,13 @@ export interface ISinglyLinkedList<T> {
 	getSize(): number;
 	view(): ThisType<ISinglyLinkedList<T>>;
 	toArray(): Array<T>;
+}
+
+export interface IStack<T extends NodeData> {
+	data: T[];
+	push(data: T): ThisType<IStack<T>>;
+	pop(): ThisType<IStack<T>>;
+	peak(): T;
+	view(): ThisType<IStack<T>>;
+	getSize(): number;
 }
