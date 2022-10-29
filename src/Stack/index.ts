@@ -36,7 +36,7 @@ s.push(1).push(2).push(3).pop(); // [$base, 1, 2]
 ```
 	 */
 	pop(): Stack<T> {
-		if (this.data.length == 0) throw "Can not remove from an empty queue.";
+		if (this.data.length == 0) throw "Can not remove from an empty stack.";
 		this.data.pop();
 		return this;
 	}
@@ -52,7 +52,7 @@ console.log(top); // 3
 ```
  */
 	peak(): T {
-		if (this.data.length == 0) throw "Can not view from an empty queue.";
+		if (this.data.length == 0) throw "Can not peak an empty stack.";
 		return this.data[this.data.length - 1];
 	}
 
@@ -76,7 +76,7 @@ s.push(1).push(2).push(3).view();
 ```
 	 */
 	view(): Stack<T> {
-		if (this.data.length == 0) throw "Can not view from an empty queue.";
+		if (this.data.length == 0) throw "Can not view an empty stack.";
 		let log = "";
 		for (let i = this.data.length - 1; i >= 0; i--) {
 			log +=
