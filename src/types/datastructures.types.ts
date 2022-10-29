@@ -37,3 +37,13 @@ export interface IStack<T extends NodeData> {
 	view(): ThisType<IStack<T>>;
 	getSize(): number;
 }
+
+export interface IQueue<T extends NodeData> {
+	_data: T[];
+	enqueue(data: T): ThisType<IQueue<T>>;
+	dequeue(): ThisType<IQueue<T>>;
+	first(): T;
+	last(): T;
+	view(): ThisType<IQueue<T>>;
+	getSize(): number;
+}
