@@ -14,9 +14,9 @@ export interface ISinglyLinkedListNode<T = NodeData> extends Node<T> {
 	next: ISinglyLinkedListNode<T> | null;
 }
 
-export interface DoublyLinkedListNode<T = NodeData> extends Node<T> {
-	next: DoublyLinkedListNode<T> | null;
-	prev: DoublyLinkedListNode<T> | null;
+export interface IDoublyLinkedListNode<T = NodeData> extends Node<T> {
+	next: IDoublyLinkedListNode<T> | null;
+	prev: IDoublyLinkedListNode<T> | null;
 }
 
 export interface GraphNode<T = NodeData> extends Node<T> {
