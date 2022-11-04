@@ -105,7 +105,7 @@ list.pushStart('joe'); // ['joe,', 'john', 'sami']
      */
     pushStart(data: T): DoublyLinkedList<T> {
         return this.insert(data, 0);
-    };
+    }
 
     /**
      * Inserts a new node to the end of the list
@@ -118,7 +118,7 @@ list.push('joe') // ['john', 'sami', 'joe']
      */
     push(data: T):DoublyLinkedList<T> {
         return this.insert(data, this.size);
-    };
+    }
 
     /**
      * deletes a node from the list
@@ -134,7 +134,7 @@ list.delete(3) // [1,2,3,5]
         if(this.size - 1 < pos) throw "Index out of bounds.";
         if(this.size === 1) {
             return _emptyList(this)
-        };
+        }
 
         if(pos === 0) {
             this.head = this.head!.next;
@@ -261,12 +261,12 @@ list.toArray() // [1,2,3,4,5]
      */
     toArray(): T[] {
         let pntr = this.head;
-        let array = [];
+        const array = [];
         while(pntr){
             array.push(pntr.data);
             pntr = pntr.next
         }
 
         return array;
-    };
+    }
 }
