@@ -1,4 +1,4 @@
-import { BSTreeNode, ISinglyLinkedListNode, NodeData } from "./nodes.types";
+import { BSTreeNode, IDoublyLinkedListNode, ISinglyLinkedListNode, NodeData } from "./nodes.types";
 
 export interface BSTree<T extends NodeData> {
 	root: BSTreeNode<T> | null;
@@ -27,6 +27,23 @@ export interface ISinglyLinkedList<T extends NodeData> {
 	getSize(): number;
 	view(): ThisType<ISinglyLinkedList<T>>;
 	toArray(): Array<T>;
+}
+
+export interface IDoublyLinkedList<T> {
+	head: IDoublyLinkedListNode<T> | null;
+	tail: IDoublyLinkedListNode<T> | null;
+	size: number;
+	insert: (data: T, pos: number) => ThisType<IDoublyLinkedList<T>>;
+	pushStart: (data: T) => ThisType<IDoublyLinkedList<T>>;
+	push: (data: T) => ThisType<IDoublyLinkedList<T>>;
+	delete: (pos: number) => ThisType<IDoublyLinkedList<T>>;
+	pop: () => ThisType<IDoublyLinkedList<T>>;
+	popStart: () => ThisType<IDoublyLinkedList<T>>;
+	getHead: () => IDoublyLinkedListNode<T> | null;
+	getTail: () => IDoublyLinkedListNode<T> | null;
+	getSize: () => number;
+	view: () => ThisType<IDoublyLinkedList<T>>;
+	toArray: () => Array<T>;
 }
 
 export interface IStack<T extends NodeData> {
