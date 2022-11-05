@@ -1,4 +1,10 @@
-import { BSTreeNode, IDoublyLinkedListNode, ISinglyLinkedListNode, NodeData } from "./nodes.types";
+import {
+	BSTreeNode,
+	GraphObject,
+	IDoublyLinkedListNode,
+	ISinglyLinkedListNode,
+	NodeData,
+} from "./nodes.types";
 
 export interface BSTree<T extends NodeData> {
 	root: BSTreeNode<T> | null;
@@ -63,4 +69,19 @@ export interface IQueue<T extends NodeData> {
 	last(): T;
 	view(): ThisType<IQueue<T>>;
 	getSize(): number;
+}
+
+export interface IGraph {
+	_graph: GraphObject;
+	vertices: number;
+	unidirectional: boolean;
+	weighted: boolean;
+
+	addVertex(vertex: string): ThisType<IGraph>;
+	addEdge(u: string, v: string, w: number): ThisType<IGraph>;
+	removeVertex(vertex: string): ThisType<IGraph>;
+	removeEdge(u: string, v: string): ThisType<IGraph>;
+	getNeighbors(vertex: string): GraphObject[keyof GraphObject];
+	view(): ThisType<IGraph>;
+	getVerticesNumbers(): number;
 }

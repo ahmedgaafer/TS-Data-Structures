@@ -1,3 +1,5 @@
+import { type } from "os";
+
 export type NodeData = unknown;
 
 export type Node<T = NodeData> = {
@@ -21,3 +23,7 @@ export interface BSTreeNode<T = NodeData> extends Node<T> {
 	left: BSTreeNode<T> | null;
 	right: BSTreeNode<T> | null;
 }
+
+export type GraphObject = {
+	[key: string]: { [key: string]: number };
+};
