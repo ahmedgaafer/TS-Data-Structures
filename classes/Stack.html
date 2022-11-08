@@ -29,7 +29,7 @@
 <ul class="tsd-hierarchy">
 <li><span class="tsd-signature-type">IStack</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li></ul></section><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/ahmedgaafer/TS-Data-Structures/blob/a24e166/src/Stack/index.ts#L7">src/Stack/index.ts:7</a></li></ul></aside>
+<li>Defined in <a href="https://github.com/ahmedgaafer/TS-Data-Structures/blob/c42d593/src/Stack/index.ts#L7">src/Stack/index.ts:7</a></li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-index-accordion" open><summary class="tsd-accordion-summary tsd-index-summary">
@@ -54,13 +54,13 @@
 <h3>Returns</h3><p>Stack size</p>
 
 <h3>Example</h3><p>getting current Stack size</p>
-<pre><code class="language-ts"><span class="hl-1">const</span><span class="hl-0"> </span><span class="hl-2">s</span><span class="hl-0"> = </span><span class="hl-1">new</span><span class="hl-0"> </span><span class="hl-3">Stack</span><span class="hl-0">&lt;</span><span class="hl-8">number</span><span class="hl-0">&gt;();</span><br/><span class="hl-1">const</span><span class="hl-0"> </span><span class="hl-2">currentSize</span><span class="hl-0"> = </span><span class="hl-7">s</span><span class="hl-0">.</span><span class="hl-3">push</span><span class="hl-0">(</span><span class="hl-6">1</span><span class="hl-0">).</span><span class="hl-3">push</span><span class="hl-0">(</span><span class="hl-6">2</span><span class="hl-0">).</span><span class="hl-3">push</span><span class="hl-0">(</span><span class="hl-6">3</span><span class="hl-0">).</span><span class="hl-3">getSize</span><span class="hl-0">();</span><br/><br/><span class="hl-7">console</span><span class="hl-0">.</span><span class="hl-3">log</span><span class="hl-0">(</span><span class="hl-7">currentSize</span><span class="hl-0">); </span><span class="hl-5">// 3</span>
+<pre><code class="language-ts"><span class="hl-5">const</span><span class="hl-0"> </span><span class="hl-6">s</span><span class="hl-0"> = </span><span class="hl-5">new</span><span class="hl-0"> </span><span class="hl-8">Stack</span><span class="hl-0">&lt;</span><span class="hl-9">number</span><span class="hl-0">&gt;();</span><br/><span class="hl-5">const</span><span class="hl-0"> </span><span class="hl-6">currentSize</span><span class="hl-0"> = </span><span class="hl-2">s</span><span class="hl-0">.</span><span class="hl-8">push</span><span class="hl-0">(</span><span class="hl-7">1</span><span class="hl-0">).</span><span class="hl-8">push</span><span class="hl-0">(</span><span class="hl-7">2</span><span class="hl-0">).</span><span class="hl-8">push</span><span class="hl-0">(</span><span class="hl-7">3</span><span class="hl-0">).</span><span class="hl-8">getSize</span><span class="hl-0">();</span><br/><br/><span class="hl-2">console</span><span class="hl-0">.</span><span class="hl-8">log</span><span class="hl-0">(</span><span class="hl-2">currentSize</span><span class="hl-0">); </span><span class="hl-4">// 3</span>
 </code></pre>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
 <p>Implementation of IStack.getSize</p>
 <ul>
-<li>Defined in <a href="https://github.com/ahmedgaafer/TS-Data-Structures/blob/a24e166/src/Stack/index.ts#L105">src/Stack/index.ts:105</a></li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/ahmedgaafer/TS-Data-Structures/blob/c42d593/src/Stack/index.ts#L105">src/Stack/index.ts:105</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="peak" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>peak</span><a href="#peak" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
@@ -70,13 +70,13 @@
 <h3>Returns</h3><p>Top element in the stack;</p>
 
 <h3>Example</h3><p>Returning the top element of the stack;</p>
-<pre><code class="language-ts"><span class="hl-1">const</span><span class="hl-0"> </span><span class="hl-2">s</span><span class="hl-0"> = </span><span class="hl-1">new</span><span class="hl-0"> </span><span class="hl-3">Stack</span><span class="hl-0">&lt;</span><span class="hl-8">number</span><span class="hl-0">&gt;();</span><br/><span class="hl-1">const</span><span class="hl-0"> </span><span class="hl-2">top</span><span class="hl-0"> = </span><span class="hl-7">s</span><span class="hl-0">.</span><span class="hl-3">push</span><span class="hl-0">(</span><span class="hl-6">1</span><span class="hl-0">).</span><span class="hl-3">push</span><span class="hl-0">(</span><span class="hl-6">2</span><span class="hl-0">).</span><span class="hl-3">push</span><span class="hl-0">(</span><span class="hl-6">3</span><span class="hl-0">).</span><span class="hl-3">peak</span><span class="hl-0">();</span><br/><span class="hl-7">console</span><span class="hl-0">.</span><span class="hl-3">log</span><span class="hl-0">(</span><span class="hl-7">top</span><span class="hl-0">); </span><span class="hl-5">// 3</span>
+<pre><code class="language-ts"><span class="hl-5">const</span><span class="hl-0"> </span><span class="hl-6">s</span><span class="hl-0"> = </span><span class="hl-5">new</span><span class="hl-0"> </span><span class="hl-8">Stack</span><span class="hl-0">&lt;</span><span class="hl-9">number</span><span class="hl-0">&gt;();</span><br/><span class="hl-5">const</span><span class="hl-0"> </span><span class="hl-6">top</span><span class="hl-0"> = </span><span class="hl-2">s</span><span class="hl-0">.</span><span class="hl-8">push</span><span class="hl-0">(</span><span class="hl-7">1</span><span class="hl-0">).</span><span class="hl-8">push</span><span class="hl-0">(</span><span class="hl-7">2</span><span class="hl-0">).</span><span class="hl-8">push</span><span class="hl-0">(</span><span class="hl-7">3</span><span class="hl-0">).</span><span class="hl-8">peak</span><span class="hl-0">();</span><br/><span class="hl-2">console</span><span class="hl-0">.</span><span class="hl-8">log</span><span class="hl-0">(</span><span class="hl-2">top</span><span class="hl-0">); </span><span class="hl-4">// 3</span>
 </code></pre>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">T</span></h4><aside class="tsd-sources">
 <p>Implementation of IStack.peak</p>
 <ul>
-<li>Defined in <a href="https://github.com/ahmedgaafer/TS-Data-Structures/blob/a24e166/src/Stack/index.ts#L57">src/Stack/index.ts:57</a></li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/ahmedgaafer/TS-Data-Structures/blob/c42d593/src/Stack/index.ts#L57">src/Stack/index.ts:57</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="pop" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>pop</span><a href="#pop" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
@@ -87,13 +87,13 @@
 <h3>Returns</h3><p>self reference</p>
 
 <h3>Example</h3><p>Popping items from Stack</p>
-<pre><code class="language-ts"><span class="hl-1">const</span><span class="hl-0"> </span><span class="hl-2">s</span><span class="hl-0"> = </span><span class="hl-1">new</span><span class="hl-0"> </span><span class="hl-3">Stack</span><span class="hl-0">&lt;</span><span class="hl-8">number</span><span class="hl-0">&gt;();</span><br/><span class="hl-7">s</span><span class="hl-0">.</span><span class="hl-3">push</span><span class="hl-0">(</span><span class="hl-6">1</span><span class="hl-0">).</span><span class="hl-3">push</span><span class="hl-0">(</span><span class="hl-6">2</span><span class="hl-0">).</span><span class="hl-3">push</span><span class="hl-0">(</span><span class="hl-6">3</span><span class="hl-0">).</span><span class="hl-3">pop</span><span class="hl-0">(); </span><span class="hl-5">// [$base, 1, 2]</span>
+<pre><code class="language-ts"><span class="hl-5">const</span><span class="hl-0"> </span><span class="hl-6">s</span><span class="hl-0"> = </span><span class="hl-5">new</span><span class="hl-0"> </span><span class="hl-8">Stack</span><span class="hl-0">&lt;</span><span class="hl-9">number</span><span class="hl-0">&gt;();</span><br/><span class="hl-2">s</span><span class="hl-0">.</span><span class="hl-8">push</span><span class="hl-0">(</span><span class="hl-7">1</span><span class="hl-0">).</span><span class="hl-8">push</span><span class="hl-0">(</span><span class="hl-7">2</span><span class="hl-0">).</span><span class="hl-8">push</span><span class="hl-0">(</span><span class="hl-7">3</span><span class="hl-0">).</span><span class="hl-8">pop</span><span class="hl-0">(); </span><span class="hl-4">// [$base, 1, 2]</span>
 </code></pre>
 </div>
 <h4 class="tsd-returns-title">Returns <a href="Stack.html" class="tsd-signature-type" data-tsd-kind="Class">Stack</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
 <p>Implementation of IStack.pop</p>
 <ul>
-<li>Defined in <a href="https://github.com/ahmedgaafer/TS-Data-Structures/blob/a24e166/src/Stack/index.ts#L41">src/Stack/index.ts:41</a></li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/ahmedgaafer/TS-Data-Structures/blob/c42d593/src/Stack/index.ts#L41">src/Stack/index.ts:41</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="push" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>push</span><a href="#push" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
@@ -104,7 +104,7 @@
 <h3>Returns</h3><p>self reference</p>
 
 <h3>Example</h3><p>Pushing data to stack</p>
-<pre><code class="language-ts"><span class="hl-1">const</span><span class="hl-0"> </span><span class="hl-2">s</span><span class="hl-0"> = </span><span class="hl-1">new</span><span class="hl-0"> </span><span class="hl-3">Stack</span><span class="hl-0">&lt;</span><span class="hl-8">number</span><span class="hl-0">&gt;();</span><br/><span class="hl-7">s</span><span class="hl-0">.</span><span class="hl-3">push</span><span class="hl-0">(</span><span class="hl-6">1</span><span class="hl-0">).</span><span class="hl-3">push</span><span class="hl-0">(</span><span class="hl-6">2</span><span class="hl-0">).</span><span class="hl-3">push</span><span class="hl-0">(</span><span class="hl-6">3</span><span class="hl-0">) </span><span class="hl-5">// [$base, 1, 2, 3]</span>
+<pre><code class="language-ts"><span class="hl-5">const</span><span class="hl-0"> </span><span class="hl-6">s</span><span class="hl-0"> = </span><span class="hl-5">new</span><span class="hl-0"> </span><span class="hl-8">Stack</span><span class="hl-0">&lt;</span><span class="hl-9">number</span><span class="hl-0">&gt;();</span><br/><span class="hl-2">s</span><span class="hl-0">.</span><span class="hl-8">push</span><span class="hl-0">(</span><span class="hl-7">1</span><span class="hl-0">).</span><span class="hl-8">push</span><span class="hl-0">(</span><span class="hl-7">2</span><span class="hl-0">).</span><span class="hl-8">push</span><span class="hl-0">(</span><span class="hl-7">3</span><span class="hl-0">) </span><span class="hl-4">// [$base, 1, 2, 3]</span>
 </code></pre>
 </div>
 <div class="tsd-parameters">
@@ -117,7 +117,7 @@
 <h4 class="tsd-returns-title">Returns <a href="Stack.html" class="tsd-signature-type" data-tsd-kind="Class">Stack</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
 <p>Implementation of IStack.push</p>
 <ul>
-<li>Defined in <a href="https://github.com/ahmedgaafer/TS-Data-Structures/blob/a24e166/src/Stack/index.ts#L27">src/Stack/index.ts:27</a></li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/ahmedgaafer/TS-Data-Structures/blob/c42d593/src/Stack/index.ts#L27">src/Stack/index.ts:27</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="view" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>view</span><a href="#view" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
@@ -127,13 +127,13 @@
 <h3>Returns</h3><p>self reference</p>
 
 <h3>Example</h3><p>Viewing the stack</p>
-<pre><code class="language-ts"><span class="hl-1">const</span><span class="hl-0"> </span><span class="hl-2">s</span><span class="hl-0"> = </span><span class="hl-1">new</span><span class="hl-0"> </span><span class="hl-3">Stack</span><span class="hl-0">&lt;</span><span class="hl-8">number</span><span class="hl-0">&gt;();</span><br/><span class="hl-7">s</span><span class="hl-0">.</span><span class="hl-3">push</span><span class="hl-0">(</span><span class="hl-6">1</span><span class="hl-0">).</span><span class="hl-3">push</span><span class="hl-0">(</span><span class="hl-6">2</span><span class="hl-0">).</span><span class="hl-3">push</span><span class="hl-0">(</span><span class="hl-6">3</span><span class="hl-0">).</span><span class="hl-3">view</span><span class="hl-0">();</span><br/><br/><span class="hl-5">//  Stack Top</span><br/><span class="hl-5">//  3</span><br/><span class="hl-5">//  ----------</span><br/><span class="hl-5">//  2</span><br/><span class="hl-5">//  ----------</span><br/><span class="hl-5">//  1</span><br/><span class="hl-5">//  ==========</span><br/><span class="hl-5">//  Stack Base</span><br/>
+<pre><code class="language-ts"><span class="hl-5">const</span><span class="hl-0"> </span><span class="hl-6">s</span><span class="hl-0"> = </span><span class="hl-5">new</span><span class="hl-0"> </span><span class="hl-8">Stack</span><span class="hl-0">&lt;</span><span class="hl-9">number</span><span class="hl-0">&gt;();</span><br/><span class="hl-2">s</span><span class="hl-0">.</span><span class="hl-8">push</span><span class="hl-0">(</span><span class="hl-7">1</span><span class="hl-0">).</span><span class="hl-8">push</span><span class="hl-0">(</span><span class="hl-7">2</span><span class="hl-0">).</span><span class="hl-8">push</span><span class="hl-0">(</span><span class="hl-7">3</span><span class="hl-0">).</span><span class="hl-8">view</span><span class="hl-0">();</span><br/><br/><span class="hl-4">//  Stack Top</span><br/><span class="hl-4">//  3</span><br/><span class="hl-4">//  ----------</span><br/><span class="hl-4">//  2</span><br/><span class="hl-4">//  ----------</span><br/><span class="hl-4">//  1</span><br/><span class="hl-4">//  ==========</span><br/><span class="hl-4">//  Stack Base</span><br/>
 </code></pre>
 </div>
 <h4 class="tsd-returns-title">Returns <a href="Stack.html" class="tsd-signature-type" data-tsd-kind="Class">Stack</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
 <p>Implementation of IStack.view</p>
 <ul>
-<li>Defined in <a href="https://github.com/ahmedgaafer/TS-Data-Structures/blob/a24e166/src/Stack/index.ts#L81">src/Stack/index.ts:81</a></li></ul></aside></li></ul></section></section></div>
+<li>Defined in <a href="https://github.com/ahmedgaafer/TS-Data-Structures/blob/c42d593/src/Stack/index.ts#L81">src/Stack/index.ts:81</a></li></ul></aside></li></ul></section></section></div>
 <div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 <div class="tsd-navigation settings">
 <details class="tsd-index-accordion"><summary class="tsd-accordion-summary">
