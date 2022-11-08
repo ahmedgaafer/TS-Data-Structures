@@ -191,7 +191,7 @@ export class SinglyLinkedList<T extends NodeData>
 	 */
 	toArray(): T[] {
 		let pntr = this.head;
-		let array = [];
+		const array = [];
 		while (pntr) {
 			array.push(pntr.data);
 			pntr = pntr.next;

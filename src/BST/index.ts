@@ -72,9 +72,9 @@ function _delete<T>(root: BSTreeNode<T>, data: T): BSTreeNode<T> | null {
  */
 function _view<T>(root: BSTreeNode<T> | null): [T, T[], T[]] | T[] {
 	if (!root) return [];
-	let v = root.data;
-	let r = _view(root.right) as T[];
-	let l = _view(root.left) as T[];
+	const v = root.data;
+	const r = _view(root.right) as T[];
+	const l = _view(root.left) as T[];
 	return [v, r, l];
 }
 
@@ -195,7 +195,7 @@ export class BST<T extends NodeData> implements BSTree<T> {
 		const left = `${_view(this.root.left)}`;
 		const right = `${_view(this.root.right)}`;
 		const leftPush = (len: number) => " ".repeat(left.length + len);
-		let log = ` ${leftPush(3)} ${root}\n ${leftPush(3)}/ \\\n${leftPush(
+		const log = ` ${leftPush(3)} ${root}\n ${leftPush(3)}/ \\\n${leftPush(
 			3,
 		)}/   \\\n${leftPush(2)}/     \\\n{${left}}       {${right}}`;
 		console.log(log);
