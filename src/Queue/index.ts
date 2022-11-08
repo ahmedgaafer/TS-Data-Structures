@@ -1,6 +1,9 @@
 import { IQueue } from "../types/datastructures.types";
 import { NodeData } from "../types/nodes.types";
 
+/**
+ * @class Queue
+ */
 export class Queue<T extends NodeData> implements IQueue<T> {
 	_data!: T[];
 
