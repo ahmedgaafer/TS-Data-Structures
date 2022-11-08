@@ -1,0 +1,38 @@
+{
+	"compilerOptions": {
+		"target": "es2016" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
+
+		"module": "commonjs" /* Specify what module code is generated. */,
+		"rootDir": "./" /* Specify the root folder within your source files. */,
+		"outDir": "./build" /* Specify an output folder for all emitted files. */,
+
+		"declaration": true /* Generate .d.ts files from TypeScript and JavaScript files in your project. */,
+		"declarationMap": true /* Create sourcemaps for d.ts files. */,
+		"sourceMap": true /* Create source map files for emitted JavaScript files. */,
+		"removeComments": true /* Disable emitting comments. */,
+
+		"allowSyntheticDefaultImports": true /* Allow 'import x from y' when a module doesn't have a default export. */,
+		"esModuleInterop": true /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables `allowSyntheticDefaultImports` for type compatibility. */,
+		"forceConsistentCasingInFileNames": true /* Ensure that casing is correct in imports. */,
+
+		"strict": true /* Enable all strict type-checking options. */,
+		"noImplicitAny": true /* Enable error reporting for expressions and declarations with an implied `any` type.. */,
+		"strictNullChecks": true /* When type checking, take into account `null` and `undefined`. */,
+		"strictFunctionTypes": true /* When assigning functions, check to ensure parameters and the return values are subtype-compatible. */,
+		"strictBindCallApply": true /* Check that the arguments for `bind`, `call`, and `apply` methods match the original function. */,
+		"strictPropertyInitialization": true /* Check for class properties that are declared but not set in the constructor. */,
+
+		"useUnknownInCatchVariables": true /* Type catch clause variables as 'unknown' instead of 'any'. */,
+		"alwaysStrict": true /* Ensure 'use strict' is always emitted. */
+	},
+	"typedocOptions": {
+		"entryPoints": ["./index.ts", "./src/types/*.ts"],
+		"out": "docs",
+		"name": "TS Data Structures",
+		"htmlLang": "en",
+		"titleLink": "https://ahmedgaafer.github.io/TS-Data-Structures/",
+		"githubPages": true,
+		"includeVersion": true,
+		"excludeNotDocumented": "true"
+	}
+}
