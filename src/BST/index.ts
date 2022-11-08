@@ -124,6 +124,9 @@ class BSTNode<T> implements BSTreeNode<T> {
 	}
 }
 
+/**
+ * @class BinarySearchTree
+ */
 export class BST<T extends NodeData> implements BSTree<T> {
 	root: BSTreeNode<T> | null;
 	size: number;

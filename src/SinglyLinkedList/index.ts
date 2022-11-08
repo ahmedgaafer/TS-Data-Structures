@@ -1,6 +1,9 @@
 import { ISinglyLinkedList } from "../types/datastructures.types";
 import { ISinglyLinkedListNode, NodeData } from "../types/nodes.types";
 
+/**
+ * @class SinglyLinkedList
+ */
 class SinglyLinkedListNode<T extends NodeData>
 	implements ISinglyLinkedListNode<T>
 {
