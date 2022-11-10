@@ -1,6 +1,6 @@
 {
 	"name": "@ahmeds.gaafer/ts-data-structures",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "a light weight package for typescript Data structures",
 	"main": "build/index.js",
 	"files": [
@@ -14,14 +14,14 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/ahmedgaafer/JS-Data-Structures.git"
+		"url": "git+https://github.com/ahmedgaafer/TS-Data-Structures"
 	},
 	"author": "AhmedS.Gaafer",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/ahmedgaafer/JS-Data-Structures/issues"
+		"url": "https://github.com/ahmedgaafer/TS-Data-Structures/issues"
 	},
-	"homepage": "https://github.com/ahmedgaafer/JS-Data-Structures#readme",
+	"homepage": "https://ahmedgaafer.github.io/TS-Data-Structures/",
 	"devDependencies": {
 		"@types/babel__core": "^7.1.20",
 		"@types/babel__template": "^7.4.1",
