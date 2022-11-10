@@ -26,7 +26,7 @@ $ npm i @ahmeds.gaafer/ts-data-structures
 - [x] Queue
 - [x] Stack
 - [x] Heap
-- [ ] Graph
+- [x] Graph
 
 ## Usage
 
@@ -188,8 +188,6 @@ functions:
 - **_.getSize()_** => Returns the size of the heap;
 - **_.view()_** => Prints the array of the heap;
 
-//This section -Graph- is currently invalid we are working on updating it
-
 ### Graph:
 
 ```ts
@@ -214,16 +212,9 @@ g.addVertex(2);
 
 g.addVertex(1).addVertex(2); // valid
 
-g.getNeighbours(1).addVertex(3); // invalid
+g.getNeighbors(1).addVertex(3); // invalid
 
-// if you write a code that can brake the logic of the graph it will log an error message but will nor stop the whole execution of the program.
-
-//Ex
-
-g.addVertex(1);
-g.addVertex(1); // add same vertex twice
-
-g.removeVertex(5); // remove a non-existant vertex
+g.removeVertex(5); // remove a non-existent vertex
 
 // etc...
 ```
@@ -234,10 +225,10 @@ functions:
 - **_.addEdge(u, v, w: conditional)_** => Add edge between vertex "u" and vertex "v" . weight of the edge "w" is valid if only the graph is set to be weighted.
 - **_.removeVertex(v)_** => Removes the vertex from the graph and removes all of the linked edges to it.
 - **_.removeEdge(u, v)_** => Removes edge between vertex "u" and "v".
-- **_.getVerticesNumbers()_** => Returns the number of vertcies in the Graph.
-- **_.getNeighbours(v)_** => Returns a the list of neighbours of vertex v
+- **_.getVerticesNumbers()_** => Returns the number of vertices in the Graph.
+- **_.getNeighbors(v)_** => Returns a the list of neighbors of vertex v
 - **_.view()_** => Display a visual display of the graphs adjacency list.
 
 # Important Note:
 
-> **_Any usage of the functions not mentioned in the functions above might lead to un-expected behaviour._**
+> **_Any usage of the functions not mentioned in the functions above might lead to un-expected behavior and may lead to the functions throwing an error._**

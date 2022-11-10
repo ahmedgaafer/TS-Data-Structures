@@ -1,6 +1,6 @@
 {
 	"name": "@ahmeds.gaafer/ts-data-structures",
-	"version": "1.0.3",
+	"version": "1.1.0",
 	"description": "a light weight package for typescript Data structures",
 	"main": "build/index.js",
 	"files": [

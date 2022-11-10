@@ -2,7 +2,6 @@ import { IGraph } from "../types/datastructures.types";
 import { GraphObject } from "../types/nodes.types";
 /**
  * @class Graph
- * @implements {IGraph}
  */
 export class Graph implements IGraph {
 	_graph: GraphObject;

@@ -73,7 +73,6 @@ export interface IQueue<T extends NodeData> {
 	getSize(): number;
 }
 
-
 export interface IGraph {
 	_graph: GraphObject;
 	vertices: number;
@@ -87,7 +86,7 @@ export interface IGraph {
 	getNeighbors(vertex: string): GraphObject[keyof GraphObject];
 	view(): ThisType<IGraph>;
 	getVerticesNumbers(): number;
-
+}
 export interface IHeap<T extends NodeData> {
 	_data: T[];
 	_size: number;

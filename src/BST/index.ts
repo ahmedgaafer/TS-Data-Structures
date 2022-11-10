@@ -131,7 +131,6 @@ export class BST<T extends NodeData> implements BSTree<T> {
 	root: BSTreeNode<T> | null;
 	size: number;
 
-	static type = "BST<T>";
 	constructor(data: T[]) {
 		this.root = null;
 		this.size = 0;
@@ -147,6 +146,11 @@ export class BST<T extends NodeData> implements BSTree<T> {
 	 * insert a node into the tree
 	 * @param data   data you want to insert into the tree
 	 * @returns a self reference to the BST
+	 * @example
+```ts
+const tree = new BST<number>()
+tree.insert(1).insert(2).insert(3)
+```
 	 */
 
 	insert(data: T): BST<T> {
@@ -160,6 +164,13 @@ export class BST<T extends NodeData> implements BSTree<T> {
 	/**
 	 * Get the maximum depth of the tree
 	 * @returns the maximum depth of the tree
+	 * @example
+```ts
+const tree = new BST<number>()
+tree.insert(1).insert(2).insert(3)
+
+tree.getMaxDepth(); // 1
+```
 	 */
 	getMaxDepth(): number {
 		if (this.size === 0) throw "Can not get depth of an empty tree";
@@ -172,6 +183,13 @@ export class BST<T extends NodeData> implements BSTree<T> {
 	 * Delete a node from the tree
 	 * @param data data you want to delete from the tree
 	 * @returns a self reference to the BST
+	 * @example
+```ts
+const tree = new BST<number>()
+tree.insert(1).insert(2).insert(3).delete(1)
+// Tree now has a root of 2 and right branch of 3
+
+```
 	 */
 	delete(data: T): BST<T> {
 		if (this.size === 0) throw "Can not delete from an empty tree";
@@ -183,6 +201,17 @@ export class BST<T extends NodeData> implements BSTree<T> {
 	/**
 	 * Logs the tree to the console
 	 * @returns a self reference to the BST
+	 * @example
+```ts
+const tree = new BST<number>([5, 3, 7, 2, 4, 6, 8, 1, 9, 10]);
+tree.view();
+//                     5
+//                    / \
+//                   /   \
+//                  /     \
+//    {3,4,,,2,,1,,}       {7,8,9,10,,,,,6,,}
+```
+	 * 
 	 */
 	view(): BST<T> {
 		if (this.size === 0 || this.root === null)
@@ -205,6 +234,11 @@ export class BST<T extends NodeData> implements BSTree<T> {
 	/**
 	 * Get the node with the maximum value
 	 * @returns  The node with the maximum value in the tree
+	 * @example
+```ts
+const tree = new BST<number>([5, 3, 7, 2, 4, 6, 8, 1, 9, 10]);
+tree.getMaxNode(); // 10
+```
 	 */
 	getMaxNode(): BSTreeNode<T> | null {
 		if (this.size === 0 || this.root === null) throw "Tree is empty";
@@ -215,6 +249,11 @@ export class BST<T extends NodeData> implements BSTree<T> {
 	/**
 	 * Get the node with the minimum value
 	 * @returns  The node with the minimum value in the tree
+	 * @example
+```ts
+const tree = new BST<number>([5, 3, 7, 2, 4, 6, 8, 1, 9, 10]);
+tree.getMinNode(); // 1
+```
 	 */
 	getMinNode(): BSTreeNode<T> | null {
 		if (this.size === 0 || this.root === null) throw "Tree is empty";
@@ -225,6 +264,13 @@ export class BST<T extends NodeData> implements BSTree<T> {
 	 * Search for a node with the given value
 	 * @param data data you want to search for
 	 * @returns the node with the data or -1 if not found
+	 * @example
+```ts
+const tree = new BST<number>([5, 3, 7, 2, 4, 6, 8, 1, 9, 10]);
+
+tree.search(7); // Node{data:7 ,left:Node{data:6}, right:Node{data:8} }
+tree.search(50); // -1
+```
 	 */
 	search(data: T): BSTreeNode<T> | -1 {
 		return _search<T>(this.root, data);

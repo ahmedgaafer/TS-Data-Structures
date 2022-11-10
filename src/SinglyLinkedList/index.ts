@@ -1,9 +1,6 @@
 import { ISinglyLinkedList } from "../types/datastructures.types";
 import { ISinglyLinkedListNode, NodeData } from "../types/nodes.types";
 
-/**
- * @class SinglyLinkedList
- */
 class SinglyLinkedListNode<T extends NodeData>
 	implements ISinglyLinkedListNode<T>
 {
@@ -15,6 +12,9 @@ class SinglyLinkedListNode<T extends NodeData>
 	}
 }
 
+/**
+ * @class SinglyLinkedList
+ */
 export class SinglyLinkedList<T extends NodeData>
 	implements ISinglyLinkedList<T>
 {
@@ -39,6 +39,14 @@ export class SinglyLinkedList<T extends NodeData>
 	 *  @param data The data inserted into a new node
 	 *  @param pos The position of the new inserted node
 	 *  @returns {ThisType} self reference to the SinglyLinkedList
+	 *  @example
+```ts
+const sll = new SinglyLinkedList<number>();
+
+ssl.insert(1, 0); // [1]
+ssl.insert(2, 0); // [2, 1]
+ssl.insert(3, 1); // [2, 3, 1]
+```
 	 */
 	insert(data: T, pos: number): SinglyLinkedList<T> {
 		const newNode = new SinglyLinkedListNode<T>(data);
@@ -71,6 +79,14 @@ export class SinglyLinkedList<T extends NodeData>
 	 *  Insert A node at the start
 	 *  @param data The data inserted into a new node
 	 * 	@returns {ThisType} self reference to the SinglyLinkedList
+	 * @example
+```ts
+const sll = new SinglyLinkedList<number>();
+
+ssl.pushStart(1); // [1]
+ssl.pushStart(2); // [2, 1]
+ssl.pushStart(3); // [3, 2, 1]
+```
 	 */
 	pushStart(data: T): SinglyLinkedList<T> {
 		return this.insert(data, 0);
@@ -81,11 +97,10 @@ export class SinglyLinkedList<T extends NodeData>
 	 *  @param data The data inserted into a new node
 	 * 	@returns {ThisType} self reference to the SinglyLinkedList
 	 * 	@example
-	 * Pushing items to the LinkedList
 	 *
 ```ts
-			const list = new SinglyLinkedList<number>();
-			list.push(1).push(2).push(3);
+			const ssl = new SinglyLinkedList<number>();
+			ssl.push(1).push(2).push(3);
 ```
 	 */
 	push(data: T): SinglyLinkedList<T> {
@@ -96,6 +111,14 @@ export class SinglyLinkedList<T extends NodeData>
 	 *	deletes a node at position
 	 *  @param pos
 	 * 	@returns {ThisType} self reference to the SinglyLinkedList
+	 * @example
+```ts
+const sll = new SinglyLinkedList<number>();
+
+ssl.push(1).push(2).push(3); // [1, 2, 3]
+
+ssl.delete(0); // [2, 3];
+```
 	 */
 
 	delete(pos: number): SinglyLinkedList<T> {
@@ -132,6 +155,14 @@ export class SinglyLinkedList<T extends NodeData>
 	/**
 	 * Remove last element of list
 	 * @returns {ThisType} self reference to the SinglyLinkedList
+	 * @example
+```ts
+const sll = new SinglyLinkedList<number>();
+
+ssl.push(1).push(2).push(3); // [1, 2, 3]
+
+ssl.pop(); // [1, 2];
+```
 	 */
 	pop(): SinglyLinkedList<T> {
 		return this.delete(this.size - 1);
@@ -139,6 +170,14 @@ export class SinglyLinkedList<T extends NodeData>
 
 	/**
 	 * Remove first element of list
+	 * @example
+```ts
+const sll = new SinglyLinkedList<number>();
+
+ssl.push(1).push(2).push(3); // [1, 2, 3]
+
+ssl.popStart(); // [1, 2];
+```
 	 */
 	popStart(): SinglyLinkedList<T> {
 		return this.delete(0);
@@ -147,6 +186,14 @@ export class SinglyLinkedList<T extends NodeData>
 	/**
 	 *
 	 * @returns Head of the SinglyLinkedList
+	 * @example
+```ts
+const sll = new SinglyLinkedList<number>();
+
+ssl.push(1).push(2).push(3); // [1, 2, 3]
+
+ssl.getHead(); // 1
+```
 	 */
 	getHead(): null | ISinglyLinkedListNode<T> {
 		return this.head;
@@ -155,6 +202,14 @@ export class SinglyLinkedList<T extends NodeData>
 	/**
 	 *
 	 * @returns Tail of the SinglyLinkedList
+	 * @example
+```ts
+const sll = new SinglyLinkedList<number>();
+
+ssl.push(1).push(2).push(3); // [1, 2, 3]
+
+ssl.getTail(); // 3
+```
 	 */
 	getTail(): null | ISinglyLinkedListNode<T> {
 		return this.tail;
@@ -163,6 +218,14 @@ export class SinglyLinkedList<T extends NodeData>
 	/**
 	 *
 	 * @returns size of the SinglyLinkedList
+	 * @example
+```ts
+const sll = new SinglyLinkedList<number>();
+
+ssl.push(1).push(2).push(3); // [1, 2, 3]
+
+ssl.getSize(); // 3
+```
 	 */
 	getSize(): number {
 		return this.size;
@@ -170,6 +233,14 @@ export class SinglyLinkedList<T extends NodeData>
 
 	/**
 	 * Log the content of the SinglyLinkedList.
+	 * @example
+```ts
+const sll = new SinglyLinkedList<number>();
+
+ssl.push(1).push(2).push(3); // [1, 2, 3]
+
+ssl.view(); // 1 => 2 => 3 => null
+```
 	 */
 	view(): SinglyLinkedList<T> {
 		if (this.size === 0) throw "Can not view an empty list.";
@@ -188,6 +259,14 @@ export class SinglyLinkedList<T extends NodeData>
 	/**
 	 *
 	 * @returns Array of SinglyLinkedList elements
+	 * @example
+```ts
+const sll = new SinglyLinkedList<number>();
+
+ssl.push(1).push(2).push(3); // [1, 2, 3]
+
+ssl.toArray(); // Array([1, 2, 3])
+```
 	 */
 	toArray(): T[] {
 		let pntr = this.head;
