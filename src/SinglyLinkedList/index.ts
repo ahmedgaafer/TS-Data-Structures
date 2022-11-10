@@ -1,6 +1,9 @@
 import { ISinglyLinkedList } from "../types/datastructures.types";
 import { ISinglyLinkedListNode, NodeData } from "../types/nodes.types";
 
+/**
+ * @class SinglyLinkedList
+ */
 class SinglyLinkedListNode<T extends NodeData>
 	implements ISinglyLinkedListNode<T>
 {
@@ -188,7 +191,7 @@ export class SinglyLinkedList<T extends NodeData>
 	 */
 	toArray(): T[] {
 		let pntr = this.head;
-		let array = [];
+		const array = [];
 		while (pntr) {
 			array.push(pntr.data);
 			pntr = pntr.next;

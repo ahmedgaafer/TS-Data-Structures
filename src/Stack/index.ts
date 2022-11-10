@@ -1,6 +1,9 @@
 import { IStack } from "../types/datastructures.types";
 import { NodeData } from "../types/nodes.types";
 
+/**
+ * @class Stack
+ */
 export class Stack<T extends NodeData> implements IStack<T> {
 	data!: T[];
 

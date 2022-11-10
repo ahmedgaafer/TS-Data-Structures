@@ -4,6 +4,8 @@ import { Stack } from "./src/Stack";
 import { Queue } from "./src/Queue";
 import { DoublyLinkedList } from "./src/DoublyLinkedList";
 import { Graph } from "./src/Graph";
+import { Heap } from "./src/Heap";
+
 
 export {
 	BinarySearchTree,
@@ -12,4 +14,6 @@ export {
 	Queue,
 	DoublyLinkedList,
 	Graph,
+	Heap,
+
 };

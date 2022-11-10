@@ -6,6 +6,8 @@ import {
 	NodeData,
 } from "./nodes.types";
 
+import { CMP } from "./utility.types";
+
 export interface BSTree<T extends NodeData> {
 	root: BSTreeNode<T> | null;
 	size: number;
@@ -71,6 +73,7 @@ export interface IQueue<T extends NodeData> {
 	getSize(): number;
 }
 
+
 export interface IGraph {
 	_graph: GraphObject;
 	vertices: number;
@@ -84,4 +87,26 @@ export interface IGraph {
 	getNeighbors(vertex: string): GraphObject[keyof GraphObject];
 	view(): ThisType<IGraph>;
 	getVerticesNumbers(): number;
+
+export interface IHeap<T extends NodeData> {
+	_data: T[];
+	_size: number;
+	_comparator: CMP<T>;
+	_getLeftChildIndex(index: number): number;
+	_getRightChildIndex(index: number): number;
+	_getParentIndex(index: number): number;
+	_hasLeftChild(index: number): boolean;
+	_hasRightChild(index: number): boolean;
+	_hasParent(index: number): boolean;
+	_leftChild(index: number): T;
+	_rightChild(index: number): T;
+	_parent(index: number): T;
+	_swap(i: number, j: number): void;
+	_heapifyUp(): void;
+	_heapifyDown(): void;
+	push(data: T): ThisType<IHeap<T>>;
+	pop(): ThisType<IHeap<T>>;
+	peak(): T;
+	getSize(): number;
+	view(): ThisType<IHeap<T>>;
 }
