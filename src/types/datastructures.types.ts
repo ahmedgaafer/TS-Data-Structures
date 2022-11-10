@@ -1,9 +1,11 @@
 import {
 	BSTreeNode,
+	GraphObject,
 	IDoublyLinkedListNode,
 	ISinglyLinkedListNode,
 	NodeData,
 } from "./nodes.types";
+
 import { CMP } from "./utility.types";
 
 export interface BSTree<T extends NodeData> {
@@ -70,6 +72,21 @@ export interface IQueue<T extends NodeData> {
 	view(): ThisType<IQueue<T>>;
 	getSize(): number;
 }
+
+
+export interface IGraph {
+	_graph: GraphObject;
+	vertices: number;
+	unidirectional: boolean;
+	weighted: boolean;
+
+	addVertex(vertex: string): ThisType<IGraph>;
+	addEdge(u: string, v: string, w: number): ThisType<IGraph>;
+	removeVertex(vertex: string): ThisType<IGraph>;
+	removeEdge(u: string, v: string): ThisType<IGraph>;
+	getNeighbors(vertex: string): GraphObject[keyof GraphObject];
+	view(): ThisType<IGraph>;
+	getVerticesNumbers(): number;
 
 export interface IHeap<T extends NodeData> {
 	_data: T[];
