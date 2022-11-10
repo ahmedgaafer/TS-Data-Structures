@@ -19,6 +19,9 @@ jobs:
         run: |
           npm install
           npm run doc:prod
+      - name: test
+        run: |
+         npm run test
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@releases/v4
         with:
