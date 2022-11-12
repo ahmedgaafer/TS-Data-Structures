@@ -1,20 +1,26 @@
 {
 	"compilerOptions": {
-		"target": "es2016" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
-		"lib": ["es2016"],
-		"module": "commonjs" /* Specify what module code is generated. */,
-		"rootDir": "./" /* Specify the root folder within your source files. */,
+		"target": "es5" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
+		"lib": [],
+		"module": "umd" /* Specify what module code is generated. */,
+		"rootDir": "./src" /* Specify the root folder within your source files. */,
 		"outDir": "./build" /* Specify an output folder for all emitted files. */,
+		"moduleResolution": "node",
+		"baseUrl": "./src",
 		"typeRoots": ["node_modules/@types", "src/types"],
 		"preserveConstEnums": true,
 		"isolatedModules": true,
 		"noImplicitOverride": true,
 		"noPropertyAccessFromIndexSignature": true,
+		"paths": {
+			"@types/*": ["./src/types/*"]
+		},
 
 		"noEmit": false,
 		"declaration": true /* Generate .d.ts files from TypeScript and JavaScript files in your project. */,
+		"declarationDir": "./build",
 		"declarationMap": true /* Create sourcemaps for d.ts files. */,
-		"sourceMap": true /* Create source map files for emitted JavaScript files. */,
+		"sourceMap": false /* Create source map files for emitted JavaScript files. */,
 		"removeComments": true /* Disable emitting comments. */,
 
 		"allowSyntheticDefaultImports": true /* Allow 'import x from y' when a module doesn't have a default export. */,

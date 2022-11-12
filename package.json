@@ -1,16 +1,17 @@
 {
 	"name": "@ahmeds.gaafer/ts-data-structures",
-	"version": "1.1.2",
+	"version": "1.1.3",
 	"description": "a light weight package for typescript Data structures",
 	"main": "build/index.js",
 	"files": [
 		"./build"
 	],
+	"typings": "./build/index.d.ts",
 	"scripts": {
 		"test": "jest --coverage",
 		"doc:dev": "npx typedoc --logLevel Error",
 		"doc:prod": "npx typedoc",
-		"build": "tsc index.ts"
+		"build": "tsc"
 	},
 	"repository": {
 		"type": "git",
@@ -39,10 +40,20 @@
 		"typedoc": "^0.23.14",
 		"typedoc-plugin-merge-modules": "^4.0.1"
 	},
-	"dependencies": {
+	"peerDependencies": {
 		"typescript": "^4.6.4"
 	},
 	"directories": {
 		"doc": "docs"
-	}
+	},
+	"keywords": [
+		"typescript",
+		"javascript",
+		"type",
+		"types",
+		"util",
+		"utilities",
+		"helper",
+		"data structures"
+	]
 }
