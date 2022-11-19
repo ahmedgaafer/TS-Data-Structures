@@ -38,7 +38,7 @@
 	},
 	"exclude": ["*.test.ts"],
 	"typedocOptions": {
-		"entryPoints": ["./index.ts", "./src/types/*.ts"],
+		"entryPoints": ["./src/index.ts", "./src/types/*.ts"],
 		"out": "docs",
 		"name": "TS Data Structures",
 		"htmlLang": "en",
